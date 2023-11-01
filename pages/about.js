@@ -51,7 +51,7 @@ export default function About() {
                         animate={menuIsOpen ? "hide" : "show"}
                         exit="hide"
                     >
-                        Hey, I'm Ilya, a passionate web developer specializing
+                        Hey, I&apos;m Ilya, a passionate web developer specializing
                         in the MERN (MongoDB, Express.js, React.js, Node.js)
                         stack. With a deep-rooted love for coding and a creative
                         mind, I bring a unique blend of technical expertise and

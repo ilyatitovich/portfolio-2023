@@ -41,7 +41,7 @@ export default function Custom404() {
                             className="link"
                         >
                             <Link className="link-underline" href="/">
-                                → {/* */}back home
+                                → back home
                             </Link>
                         </motion.div>
                     </div>

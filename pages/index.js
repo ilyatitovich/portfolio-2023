@@ -33,7 +33,7 @@ export default function Home() {
                         exit="hide"
                         className={styles.subTitle}
                     >
-                        <span>I'm web developer</span>
+                        <span>I&apos;m web developer</span>
                         <span> with passion for design and music</span>
                     </motion.h3>
                 </div>
