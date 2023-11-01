@@ -1,0 +1,29 @@
+.burger {
+    display: block;
+    flex-direction: column;
+    cursor: pointer;
+    padding: .5em;
+    background-color: transparent;
+    border: none;
+    outline: none;
+  }
+  
+.line {
+    width: 2.25em;
+    height: 2px;
+    background-color: var(--color);
+    margin: 4px 0;
+    transition: transform 0.3s;
+}
+  
+.active:nth-child(1) {
+    transform: translateY(6px) rotate(45deg); 
+}
+
+.active:nth-child(2) {
+    transform: scale(0); 
+}
+
+.active:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg); 
+}

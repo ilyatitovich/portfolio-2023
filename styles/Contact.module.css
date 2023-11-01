@@ -1,0 +1,41 @@
+.contact {
+  margin: var(--top-margin) var(--left-right-margin) 0;
+}
+
+@media (max-width: 47.99em) {
+  .contact {
+    margin: calc(var(--innerVh, 1vh) * 40) var(--left-right-margin)
+      var(--top-margin);
+  }
+}
+
+@media (max-width: 61.99em) and (orientation: portrait) {
+  .contact {
+    margin: calc(var(--innerVh, 1vh) * 40) var(--left-right-margin)
+      var(--top-margin);
+  }
+}
+
+.content {
+  margin-top: var(--top-internal-margin);
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 61.99em) {
+  .content {
+    flex-direction: column;
+  }
+}
+
+.left,
+.right {
+  width: 50%;
+}
+
+@media (max-width: 61.99em) {
+  .left,
+  .right {
+    width: 100%;
+  }
+}
