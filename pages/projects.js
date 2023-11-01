@@ -26,10 +26,10 @@ const projects = [
 export default function Projects() {
     const { menuIsOpen, isRoute } = useContext(MenuContext);
 
+    const [currentProject, setCurrentProject] = useState(false);
+
     const projectRows = projects.map((project, i, arr) => {
         const { id, title, path, category } = project;
-
-        const [currentProject, setCurrentProject] = useState(false);
 
         return (
             <motion.li

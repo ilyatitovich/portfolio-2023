@@ -6,7 +6,7 @@ import { menuItemAnimation } from "../animation";
 export default function Menu() {
   const menuItems = ["Home", "Projects", "About", "Contact"].map((el, i) => {
     return (
-      <li>
+      <li key={el}>
         <motion.div
           variants={menuItemAnimation}
           custom={i}
