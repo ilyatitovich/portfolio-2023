@@ -70,7 +70,7 @@ export function PageWrapper({children}) {
     <motion.div 
         variants={fullPage} 
         initial="out" 
-        animate={menuIsOpen && !isRoute ? "out" : "in"} 
+        animate={menuIsOpen && isRoute === false ? "out" : "in"} 
         exit="out"
     >
         {children}
