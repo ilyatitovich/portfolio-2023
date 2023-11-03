@@ -1,4 +1,3 @@
-import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { MenuContext } from "../components/MenuProvider";
@@ -10,41 +9,41 @@ export default function Home() {
     const { menuIsOpen } = useContext(MenuContext);
 
     return (
-        <div className={styles.home}>
-            <div className={styles.content}>
-                <div className={styles.wrapper}>
+        <div className="home">
+            <div className="content">
+                <div className="wrapper">
                     <motion.h1
                         variants={pageItem}
                         custom={3}
                         initial="hide"
                         animate={menuIsOpen ? "hide" : "show"}
                         exit="hide"
-                        className={styles.mainTitle}
+                        className="main-title"
                     >
                         Hey, my name is Ilya
                     </motion.h1>
                 </div>
-                <div className={styles.wrapper}>
+                <div className="wrapper">
                     <motion.h3
                         variants={pageItem}
                         custom={2}
                         initial="hide"
                         animate={menuIsOpen ? "hide" : "show"}
                         exit="hide"
-                        className={styles.subTitle}
+                        className="sub-title"
                     >
                         <span>I&apos;m web developer</span>
                         <span> with passion for design and music</span>
                     </motion.h3>
                 </div>
-                <div className={styles.wrapper}>
+                <div className="wrapper">
                     <motion.div
                         variants={pageItem}
                         custom={1}
                         initial="hide"
                         animate={menuIsOpen ? "hide" : "show"}
                         exit="hide"
-                        className={styles.linksWrapper}
+                        className="links-wrapper"
                     >
                         <div className="link">
                             <Link href="/projects" className="link-underline">

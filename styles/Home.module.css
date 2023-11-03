@@ -11,9 +11,9 @@
     flex-direction: column;
     gap: 1.25em;
     padding: 1em calc(.5em + 4vw);
-  }
+  } 
   
-  .mainTitle {
+ .mainTitle {
     font-size: clamp(1rem, .75rem + 4vw, 6rem);
     text-transform: uppercase;
     text-align: center;
@@ -39,7 +39,7 @@
       flex-direction: row;
       gap: 3em;
     }
-  }
+  } 
   
   .wrapper {
     overflow: hidden;

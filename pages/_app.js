@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import "@/styles/home.css";
 import { AnimatePresence } from "framer-motion";
 import Layout from "@/components/Layout";
 
