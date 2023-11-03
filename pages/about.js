@@ -1,4 +1,3 @@
-import styles from "../styles/About.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -11,25 +10,25 @@ export default function About() {
 
     return (
         <div className="page-content">
-            <div className={styles.about}>
-                <div className={styles.right}>
+            <div className="about">
+                <div className="about-right">
                     <motion.div
                         variants={pageItem}
                         custom={3}
                         initial="hide"
                         animate={menuIsOpen ? "hide" : "show"}
                         exit="hide"
-                        className={styles.profilePicWrapper}
+                        className="profile-pic-wrapper"
                     >
                         <Image
                             src="/images/profile-img.webp"
                             alt="Ilya Titov"
                             fill={true}
-                            className={styles.profilePic}
+                            className="profile-pic"
                         />
                     </motion.div>
                 </div>
-                <div className={styles.left}>
+                <div className="about-left">
                     <motion.div
                         variants={pageItem}
                         custom={2}
@@ -44,22 +43,23 @@ export default function About() {
                     </motion.div>
 
                     <motion.p
-                        className={styles.presentationText}
+                        className="presentation-text"
                         variants={pageItem}
                         custom={1}
                         initial="hide"
                         animate={menuIsOpen ? "hide" : "show"}
                         exit="hide"
                     >
-                        Hey, I&apos;m Ilya, a passionate web developer specializing
-                        in the MERN (MongoDB, Express.js, React.js, Node.js)
-                        stack. With a deep-rooted love for coding and a creative
-                        mind, I bring a unique blend of technical expertise and
-                        a keen eye for design to the world of web development.
+                        Hey, I&apos;m Ilya, a passionate web developer
+                        specializing in the MERN (MongoDB, Express.js, React.js,
+                        Node.js) stack. With a deep-rooted love for coding and a
+                        creative mind, I bring a unique blend of technical
+                        expertise and a keen eye for design to the world of web
+                        development.
                     </motion.p>
 
                     <motion.div
-                        className={styles.resumeLink}
+                        className="resume-link"
                         variants={pageItem}
                         custom={1}
                         initial="hide"

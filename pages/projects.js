@@ -1,4 +1,3 @@
-import styles from "../styles/Projects.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -41,13 +40,13 @@ export default function Projects() {
                 exit="hide"
             >
                 <Link href={`/projects/${path}`}>
-                    <div className={styles.row}>
+                    <div className="row">
                         <div
-                            className={styles.rowLeft}
+                            className="row-left"
                             onMouseEnter={() => setCurrentProject(true)}
                             onMouseLeave={() => setCurrentProject(false)}
                         >
-                            <div className={styles.selectedWrapper}>
+                            <div className="selected-wrapper">
                                 <motion.h4
                                     initial={{ x: -100 }}
                                     animate={
@@ -58,18 +57,15 @@ export default function Projects() {
                                         duration: 0.5,
                                         ease: "easeOut",
                                     }}
-                                    className={styles.selected}
+                                    className="selected"
                                 >
-                                    {" "}
-                                    →{" "}
+                                    →
                                 </motion.h4>
                             </div>
-                            <motion.h4 className={styles.title}>
-                                {title}
-                            </motion.h4>
+                            <motion.h4 className="title">{title}</motion.h4>
                         </div>
-                        <div className={styles.rowRight}>
-                            <p className={styles.category}>{category}</p>
+                        <div className="row-right">
+                            <p className="category">{category}</p>
                         </div>
                     </div>
                 </Link>
@@ -79,21 +75,18 @@ export default function Projects() {
 
     return (
         <div className="page-content">
-            <div className={styles.projects}>
-                <div className={styles.left}>
+            <div className="projects">
+                <div className="left">
                     <div
-                        className={styles.leftInside}
+                        className="left-inside"
                         style={{
                             opacity: 1,
                             borderRadius: "0px 48px 0px 0px",
                             transform: "none",
                         }}
                     >
-                        <div
-                            className={styles.imageWrapper}
-                            style={{ opacity: 0 }}
-                        >
-                            <div className={styles.imageScale}>
+                        <div className="image-wrapper" style={{ opacity: 0 }}>
+                            <div className="image-scale">
                                 <img
                                     alt="Chris Pratt"
                                     src="/_next/image?url=https%3A%2F%2Fmedia.graphassets.com%2F7uVvYwgTHeebSFnexvTH&w=3840&q=75"
@@ -110,7 +103,7 @@ export default function Projects() {
                         </div>
                     </div>
                 </div>
-                <div className={styles.right}>
+                <div className="right">
                     <motion.div
                         variants={pageItem}
                         custom={0}

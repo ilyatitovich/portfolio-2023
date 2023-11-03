@@ -4,7 +4,7 @@ import { MenuContext } from "../components/MenuProvider";
 import { useContext } from "react";
 import { pageItem } from "@/components/animation";
 
-export default function Custom404() {
+export default function Custom505() {
     const { menuIsOpen } = useContext(MenuContext);
 
     return (
@@ -28,7 +28,7 @@ export default function Custom404() {
                         exit="hide"
                         className="error-code"
                     >
-                        404
+                        505
                     </motion.h1>
                     <div className="link-wrapper">
                         <motion.div

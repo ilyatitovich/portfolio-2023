@@ -1,0 +1,152 @@
+.projects {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    padding: var(--top-margin) 0 0 0;
+}
+
+@media (max-width: 47.99em) {
+    .projects {
+        padding: calc(var(--innerVh, 1vh) * 40) 0 0;
+        flex-direction: column;
+        height: auto;
+    }
+}
+
+@media (max-width: 61.99em) and (orientation: portrait) {
+    .projects {
+        padding: calc(var(--innerVh, 1vh) * 40) 0 0;
+        flex-direction: column;
+        height: auto;
+    }
+}
+
+.projects .left {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    padding-right: var(--left-right-internal-margin);
+}
+
+@media (max-width: 47.99em) {
+    .projects.left {
+        display: none;
+    }
+}
+
+@media (max-width: 61.99em) and (orientation: portrait) {
+    .projects .left {
+        display: none;
+    }
+}
+
+.projects .leftInside {
+    position: absolute;
+    height: 100%;
+    width: calc(100% - var(--left-right-internal-margin));
+    overflow: hidden;
+}
+
+.projects .imageWrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 0 var(--border-radius) 0 0;
+    transform: translateZ(0);
+}
+
+.projects .imageScale {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.projects .imageScale img {
+    border-radius: 0 var(--border-radius) 0 0;
+    -o-object-position: 50% 50%;
+    object-position: 50% 50%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.projects .right {
+    padding: 0 var(--left-right-margin) 0 var(--left-right-internal-margin);
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+}
+
+@media (max-width: 47.99em) {
+    .projects .right {
+        width: 100%;
+        margin: 0;
+        padding: 0 var(--left-right-margin);
+    }
+}
+
+@media (max-width: 61.99em) and (orientation: portrait) {
+    .projects .right {
+        width: 100%;
+        margin: 0;
+        padding: 0 var(--left-right-margin);
+    }
+}
+
+.projects .right ul {
+    overflow-y: auto;
+    height: 100%;
+    scrollbar-width: none;
+}
+
+.projects .right ul::-webkit-scrollbar {
+    display: none;
+}
+
+.projects .row {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    border-bottom: var(--border) solid #606887;
+}
+
+.projects .rowLeft {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-overflow: ellipsis;
+}
+
+.projects .selectedWrapper {
+    position: absolute;
+    overflow: hidden;
+}
+
+.projects .selected {
+    padding-right: 12px;
+    position: relative;
+}
+
+.projects .title {
+    margin-right: var(--left-right-internal-margin);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.projects .rowRight {
+    width: 100%;
+    text-align: right;
+}
+
+.projects .category {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}

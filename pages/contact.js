@@ -1,4 +1,3 @@
-import styles from "../styles/Contact.module.css";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { pageItem } from "@/components/animation";
@@ -10,7 +9,7 @@ export default function Contact() {
 
   return (
     <div className="page-content">
-      <div className={styles.contact}>
+      <div className="contact">
         <motion.div
           variants={pageItem}
           custom={0}
@@ -24,8 +23,8 @@ export default function Contact() {
           <hr className="head-separator" />
         </motion.div>
 
-        <div className={styles.content}>
-          <div className={styles.left}>
+        <div className="content">
+          <div className="left">
             <table>
               <tbody>
                 <tr>
@@ -63,7 +62,7 @@ export default function Contact() {
               </tbody>
             </table>
           </div>
-          <div className={styles.right}>
+          <div className="right">
             <table>
               <tbody>
                 <tr>
