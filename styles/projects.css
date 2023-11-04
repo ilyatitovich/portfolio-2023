@@ -40,14 +40,14 @@
     }
 }
 
-.projects .leftInside {
+.projects .left-inside {
     position: absolute;
     height: 100%;
     width: calc(100% - var(--left-right-internal-margin));
     overflow: hidden;
 }
 
-.projects .imageWrapper {
+.projects .image-wrapper {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -56,13 +56,13 @@
     transform: translateZ(0);
 }
 
-.projects .imageScale {
+.projects .image-scale {
     position: relative;
     width: 100%;
     height: 100%;
 }
 
-.projects .imageScale img {
+.projects .image-scale img {
     border-radius: 0 var(--border-radius) 0 0;
     -o-object-position: 50% 50%;
     object-position: 50% 50%;
@@ -116,14 +116,14 @@
     border-bottom: var(--border) solid #606887;
 }
 
-.projects .rowLeft {
+.projects .row-left {
     display: flex;
     align-items: center;
     width: 100%;
     text-overflow: ellipsis;
 }
 
-.projects .selectedWrapper {
+.projects .selected-wrapper {
     position: absolute;
     overflow: hidden;
 }
@@ -140,7 +140,7 @@
     overflow: hidden;
 }
 
-.projects .rowRight {
+.projects .row-right {
     width: 100%;
     text-align: right;
 }
