@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { MenuContext } from "../components/MenuProvider";
@@ -10,6 +11,9 @@ export default function Home() {
 
     return (
         <div className="home">
+            <Head>
+                <title>Ilya Titov | Web Developer</title>
+            </Head>
             <div className="content">
                 <div className="wrapper">
                     <motion.h1

@@ -1,8 +1,8 @@
 export const projects = [
     {
         id: 1,
-        title: "Ilya Titov",
-        path: "ilyatitov",
+        title: "Portfolio",
+        path: "portfolio",
         cover: "/projects/cover-2.png",
         category: "Web Development",
     },

@@ -1,4 +1,10 @@
 @font-face {
+    font-family: geomanist;
+    src: url(/fonts/geomanist-bold-webfont.woff) format("woff");
+    font-style: bold;
+}
+
+@font-face {
     font-family: studiofeixen-variable;
     src: url(/fonts/studio-feixen-sans-variable.woff2) format("woff2"),
         url(/fonts/studio-feixen-sans-variable.ttf) format("truetype");

@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -48,7 +49,7 @@ export default function Projects() {
                             <motion.h4
                                 initial={{ x: 0 }}
                                 animate={{
-                                    x: currentProject === title ? 25 : 0,
+                                    x: currentProject === title ? 24 : 0,
                                 }}
                                 transition={{
                                     type: "tween",
@@ -96,31 +97,36 @@ export default function Projects() {
     });
 
     return (
-        <div className="page-content">
-            <div className="projects">
-                <div className="left">
-                    <div className="left-inside">{projectImages}</div>
-                </div>
-                <div className="right">
-                    <motion.div
-                        variants={pageItem}
-                        custom={0}
-                        initial="hide"
-                        animate={menuIsOpen ? "hide" : "show"}
-                        exit="hide"
-                    >
-                        <div className="page-head">
-                            <h2 className="page-title">Projects</h2>
-                            <h5 className="elements-number">
-                                {projects.length}
-                            </h5>
-                        </div>
-                        <hr className="head-separator" />
-                    </motion.div>
+        <>
+            <Head>
+                <title>Ilya Titov | Projects</title>
+            </Head>
+            <div className="page-content">
+                <div className="projects">
+                    <div className="left">
+                        <div className="left-inside">{projectImages}</div>
+                    </div>
+                    <div className="right">
+                        <motion.div
+                            variants={pageItem}
+                            custom={0}
+                            initial="hide"
+                            animate={menuIsOpen ? "hide" : "show"}
+                            exit="hide"
+                        >
+                            <div className="page-head">
+                                <h2 className="page-title">Projects</h2>
+                                <h5 className="elements-number">
+                                    {projects.length}
+                                </h5>
+                            </div>
+                            <hr className="head-separator" />
+                        </motion.div>
 
-                    <ul>{projectRows}</ul>
+                        <ul>{projectRows}</ul>
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 }
