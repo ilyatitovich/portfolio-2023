@@ -9,7 +9,7 @@ export const pageItem = {
         y: 0,
         transition: {
             delay: i * 0.05 + 0.5, 
-            duration: 0.3, 
+            duration: 0.5, 
             ease: "easeOut"
         }
     }),
@@ -19,7 +19,7 @@ export const pageItem = {
         y: -100,
         transition: {
             delay: i * 0.08, 
-            duration: 0.3, 
+            duration: 0.5, 
             ease: "easeOut"
         }
     })
