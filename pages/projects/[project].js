@@ -191,6 +191,6 @@ export default function Project() {
             </div>
         </>
     ) : (
-        <Custom404 />
+        router.query.project && <Custom404/>
     );
 }
