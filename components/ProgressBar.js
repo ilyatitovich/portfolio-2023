@@ -8,7 +8,7 @@ export default function ProgressBar() {
   const router = useRouter();
 
   useEffect(() => {
-    const handleRouteChange = (url) => {
+    const handleRouteChange = () => {
       NProgress.start();
     };
 

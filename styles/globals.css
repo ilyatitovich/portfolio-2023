@@ -1,78 +1,43 @@
 @font-face {
-    font-family: geomanist;
-    src: url(/fonts/geomanist-bold-webfont.woff) format("woff");
-    font-style: bold;
-}
-
-@font-face {
     font-family: studiofeixen-variable;
-    src: url(/fonts/studio-feixen-sans-variable.woff2) format("woff2"),
-        url(/fonts/studio-feixen-sans-variable.ttf) format("truetype");
+    src: url(/fonts/studio-feixen-sans-variable.woff2) format("woff2");
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: studiofeixen;
-    src: url(/fonts/StudioFeixenSans-Bold.eot) format("embedded-opentype"),
-        url(/fonts/StudioFeixenSans-Bold.woff2) format("woff2"),
-        url(/fonts/StudioFeixenSans-Bold.woff) format("woff"),
-        url(/fonts/StudioFeixenSans-Bold.ttf) format("truetype");
+    src: url(/fonts/StudioFeixenSans-Bold.woff2) format("woff2");
     font-weight: 700;
     font-style: normal;
 }
 
 @font-face {
     font-family: studiofeixen;
-    src: url(/fonts/StudioFeixenSans-Book.eot) format("embedded-opentype"),
-        url(/fonts/StudioFeixenSans-Book.woff2) format("woff2"),
-        url(/fonts/StudioFeixenSans-Book.woff) format("woff"),
-        url(/fonts/StudioFeixenSans-Book.ttf) format("truetype");
+    src: url(/fonts/StudioFeixenSans-Book.woff2) format("woff2");
     font-weight: 350;
     font-style: normal;
 }
 
 @font-face {
     font-family: studiofeixen;
-    src: url(/fonts/StudioFeixenSans-Medium.eot) format("embedded-opentype"),
-        url(/fonts/StudioFeixenSans-Medium.woff2) format("woff2"),
-        url(/fonts/StudioFeixenSans-Medium.woff) format("woff"),
-        url(/fonts/StudioFeixenSans-Medium.ttf) format("truetype");
+    src: url(/fonts/StudioFeixenSans-Medium.woff2) format("woff2");
     font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
     font-family: studiofeixen;
-    src: url(/fonts/StudioFeixenSans-Regular.eot) format("embedded-opentype"),
-        url(/fonts/StudioFeixenSans-Regular.woff2) format("woff2"),
-        url(/fonts/StudioFeixenSans-Regular.woff) format("woff"),
-        url(/fonts/StudioFeixenSans-Regular.ttf) format("truetype");
+    src: url(/fonts/StudioFeixenSans-Regular.woff2) format("woff2");
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: studiofeixen-writer;
-    src: url(/fonts/StudioFeixenSansWriter-Regular.eot)
-            format("embedded-opentype"),
-        url(/fonts/StudioFeixenSansWriter-Regular.woff2) format("woff2"),
-        url(/fonts/StudioFeixenSansWriter-Regular.woff) format("woff"),
-        url(/fonts/StudioFeixenSansWriter-Regular.ttf) format("truetype");
+    src: url(/fonts/StudioFeixenSansWriter-Regular.woff2) format("woff2");
     font-weight: 400;
     font-style: normal;
-}
-
-::-moz-selection {
-    background-color: #78ffd1;
-    color: #606887;
-    -webkit-text-stroke: 0;
-}
-
-::selection {
-    background-color: #78ffd1;
-    color: #606887;
-    -webkit-text-stroke: 0;
 }
 
 :root {
@@ -110,11 +75,19 @@
     }
 }
 
-/* color mode */
+::-moz-selection {
+    background-color: #f2ff78;
+    -webkit-text-stroke: 0;
+}
+
+::selection {
+    background-color: #f2ff78;
+    -webkit-text-stroke: 0;
+}
 
 html[data-theme="light"] {
     --background-color: #f3f2f9;
-    --color: #606887;
+    --color: #3b3b58;
 }
 
 html[data-theme="dark"] {
@@ -133,14 +106,12 @@ body.dark ::selection {
 }
 
 body.dark .icons-style {
-    stroke: #f3f2f9;
+    stroke: var(--color);
 }
 
 body.dark hr {
-    border-top: var(--border) solid #f3f2f9;
+    border-top: var(--border) solid var(--color);
 }
-
-/* end color mode */
 
 * {
     margin: 0;
@@ -260,8 +231,6 @@ p {
     }
 }
 
-/* links style */
-
 a {
     font-size: 1.25rem;
     font-variation-settings: "wght" 500, "wdth" 125;
@@ -275,47 +244,10 @@ a {
     }
 }
 
-.link-underline::after {
-    content: "";
-    display: block;
-    height: 2px;
-    width: 100%;
-    background-color: var(--color);
-    position: relative;
-    top: 0;
-    left: 0;
-    transform: scaleX(0);
-    transition: all 0.5s ease;
-    transform-origin: left bottom;
-}
-
-.link-underline:hover::after {
-    transform: scaleX(1);
-}
-
-.link-wrapper {
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-    overflow-x: hidden;
-}
-
-.link-wrapper .link {
-    width: auto;
-    margin-bottom: 3px;
-    white-space: nowrap;
-}
-
-/* end links style */
-
-iframe {
-    border-radius: var(--border-radius);
-}
-
 .icons-style {
     opacity: 1;
     fill: none;
-    stroke: #606887;
+    stroke: var(--color);
     stroke-width: 2px;
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -333,7 +265,7 @@ iframe {
 hr {
     border-style: none;
     border-bottom: 0;
-    border-top: var(--border) solid #606887;
+    border-top: var(--border) solid var(--color);
 }
 
 ol,
@@ -384,8 +316,6 @@ table tr:last-child td {
         padding: 0;
     }
 }
-
-/* Layout */
 
 .container {
     position: relative;
@@ -441,67 +371,12 @@ table tr:last-child td {
     margin-bottom: 0;
 }
 
-/* cursor */
-.cursor,
-.cursor-dot {
-    position: fixed;
-    pointer-events: none;
-    top: 50%;
-    left: 50%;
-    border-radius: 50%;
-    z-index: 999;
-    transform: translate(-50%, -50%);
-    -webkit-animation: 0.1s;
-    animation: 0.1s;
-    overflow: hidden;
-}
-
-.cursor {
-    width: 24px;
-    height: 24px;
-    background-color: #606887;
-    border-color: #606887;
-    mix-blend-mode: multiply;
-}
-
-.cursor body.dark {
-    background-color: #f3f2f9;
-    border-color: #f3f2f9;
-    mix-blend-mode: difference;
-}
-
-.cursor-dot {
-    width: 4px;
-    height: 4px;
-    background-color: #606887;
-    -webkit-animation: 0.4s linear;
-    animation: 0.4s linear;
-    mix-blend-mode: multiply;
-}
-
-.cursor-dot .body.dark,
-body.dark .cursor {
-    background-color: #f3f2f9;
-    mix-blend-mode: difference;
-}
-
-body.dark .cursor {
-    border-color: #f3f2f9;
-}
-
-body.dark .cursor-dot {
-    background-color: #f3f2f9;
-    mix-blend-mode: difference;
-}
-
-/* nprogress bar */
-
 #nprogress {
     pointer-events: none;
 }
 
 #nprogress .bar {
-    background: #606887;
+    background: var(--color);
     position: fixed;
     z-index: 1031;
     top: 0;
@@ -512,7 +387,7 @@ body.dark .cursor-dot {
 }
 
 body.dark #nprogress .bar {
-    background: #f3f2f9;
+    background: var(--color);
 }
 
 header {
@@ -539,27 +414,6 @@ header {
 
 body.dark header {
     mix-blend-mode: difference;
-}
-
-footer {
-    padding: 0 var(--left-right-margin) 0;
-    width: 100%;
-}
-
-footer hr {
-    margin-top: var(--top-margin);
-}
-
-footer .footer-wrapper {
-    padding: var(--top-internal-margin) 0 var(--top-internal-margin);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-footer .footer-wrapper .footer-right {
-    text-align: right;
 }
 
 .links {
@@ -625,7 +479,7 @@ footer .footer-wrapper .footer-right {
     display: flex;
     align-items: center;
     padding: 1.5rem 0;
-    border-bottom: var(--border) solid #606887;
+    border-bottom: var(--border) solid var(--color);
 }
 
 .links .links-content .link-row .link-selected-wrapper {
@@ -645,8 +499,39 @@ footer .footer-wrapper .footer-right {
     overflow: hidden;
 }
 
+.link-underline::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: var(--color);
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+    transition: all 0.5s ease;
+    transform-origin: left bottom;
+}
+
+.link-underline:hover::after {
+    transform: scaleX(1);
+}
+
+.link-wrapper {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    overflow-x: hidden;
+}
+
+.link-wrapper .link {
+    width: auto;
+    margin-bottom: 3px;
+    white-space: nowrap;
+}
+
 body.dark .links .link-row {
-    border-bottom: var(--border) solid #f3f2f9;
+    border-bottom: var(--border) solid var(--color);
 }
 
 .error-container {
@@ -663,7 +548,7 @@ body.dark .links .link-row {
     font-size: 12rem;
     font-family: studiofeixen;
     font-weight: 800;
-    -webkit-text-stroke: 2px #606887;
+    -webkit-text-stroke: 2px var(--color);
     color: transparent;
 }
 
@@ -675,7 +560,7 @@ body.dark .links .link-row {
 
 @media (max-width: 61.99em) {
     .error-container .error-code {
-        -webkit-text-stroke: 1.25px #606887;
+        -webkit-text-stroke: 1.25px var(--color);
         font-size: 3rem;
     }
 }
@@ -685,11 +570,11 @@ body.dark .links .link-row {
 }
 
 body.dark .error-container .error-code {
-    -webkit-text-stroke: 2px #f3f2f9;
+    -webkit-text-stroke: 2px var(--color);
 }
 
 @media (min-width: 62em) {
     body.dark .error-container .error-code {
-        -webkit-text-stroke: 1.25px #f3f2f9;
+        -webkit-text-stroke: 1.25px var(--color);
     }
 }

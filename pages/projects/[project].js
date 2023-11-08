@@ -1,15 +1,17 @@
 import Head from "next/head";
-import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
-import { projectsList } from "./data";
-import { motion } from "framer-motion";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import Custom404 from "../404";
+import { useRouter } from "next/router";
+import { useState, useEffect, useContext } from "react";
+import { projectsList } from "@/data/data";
+import { motion } from "framer-motion";
+import { pageItem } from "@/components/animation";
+import { MenuContext } from "@/components/MenuProvider";
 
 export default function Project() {
+    const { menuIsOpen } = useContext(MenuContext);
     const router = useRouter();
-
     const [currentProject, setCurrentProject] = useState("");
     const [hovered, setHovered] = useState(false);
 
@@ -17,7 +19,7 @@ export default function Project() {
         if (router.isReady) {
             setCurrentProject(projectsList[router.query.project]);
         }
-    }, [router.query.project]);
+    }, [router.query.project, router.isReady]);
 
     const {
         title,
@@ -37,7 +39,16 @@ export default function Project() {
             </Head>
             <div className="page-content">
                 <div className="project">
-                    <div className="header-project">
+                    <motion.section
+                        variants={pageItem}
+                        custom={2}
+                        initial="hide"
+                        animate={
+                            menuIsOpen || !router.isReady ? "hide" : "show"
+                        }
+                        exit="hide"
+                        className="header-project"
+                    >
                         <div className="hero-image-wrapper">
                             <Image
                                 src={cover}
@@ -47,18 +58,30 @@ export default function Project() {
                                 className="hero-image"
                             />
                         </div>
-                    </div>
+                    </motion.section>
 
-                    <section className="project-title">
-                        <div>
-                            <div className="page-head">
-                                <h2 className="page-title">{title}</h2>
-                            </div>
-                            <hr className="head-separator" />
+                    <motion.section
+                        variants={pageItem}
+                        custom={0}
+                        initial="hide"
+                        animate={menuIsOpen ? "hide" : "show"}
+                        exit="hide"
+                        className="project-title"
+                    >
+                        <div className="page-head">
+                            <h2 className="page-title">{title}</h2>
                         </div>
-                    </section>
+                        <hr className="head-separator" />
+                    </motion.section>
 
-                    <section className="project-intro">
+                    <motion.section
+                        variants={pageItem}
+                        custom={2}
+                        initial="hide"
+                        animate={menuIsOpen ? "hide" : "show"}
+                        exit="hide"
+                        className="project-intro"
+                    >
                         <div className="project-data">
                             <table>
                                 <tbody>
@@ -100,16 +123,28 @@ export default function Project() {
                                 </div>
                             </div>
                         </div>
-                    </section>
+                    </motion.section>
 
-                    <section className="project-content">
+                    <motion.section
+                        variants={pageItem}
+                        custom={1}
+                        initial="hide"
+                        animate={menuIsOpen ? "hide" : "show"}
+                        exit="hide"
+                        className="project-content"
+                    >
                         <h6>{title}</h6>
                         <div className="project-content-wrapper">
                             {/* project images */}
                         </div>
-                    </section>
+                    </motion.section>
 
-                    <div
+                    <motion.div
+                        variants={pageItem}
+                        custom={0}
+                        initial="hide"
+                        animate={menuIsOpen ? "hide" : "show"}
+                        exit="hide"
                         className="next-project"
                         onMouseEnter={() => setHovered(true)}
                         onMouseLeave={() => setHovered(false)}
@@ -151,7 +186,7 @@ export default function Project() {
                                 </div>
                             </div>
                         </Link>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </>
