@@ -74,7 +74,7 @@ export default function About() {
                             <div className="link-wrapper">
                                 <div className="link">
                                     <Link
-                                        href="/about/resume.txt"
+                                        href="/about/ilya_titov_resume.pdf"
                                         target="_blank"
                                         rel="noreferrer"
                                         className="link-underline"
