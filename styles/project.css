@@ -144,6 +144,12 @@
     box-shadow: 0 0 20px rgba(96, 104, 135, 0.25);
 }
 
+body.dark .project .project-content-wrapper {
+    margin-bottom: var(--top-internal-margin);
+    display: flex;
+    box-shadow: 0 0 20px rgba(194, 194, 194, 0.25);
+}
+
 .project .project-content-wrapper:last-of-type {
     margin-bottom: 0;
 }
