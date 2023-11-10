@@ -27,7 +27,7 @@ export const projectsList = {
         cover: "/projects/cover-1.png",
         category: "Web Development",
         description: "Web site for photographer",
-        techStack: "React/Next.js, GSAP",
+        techStack: "React/Next.js, GSAP, Lenis",
         path:"/projects/chrispratt",
         website: "https://chrispratt.vercel.app",
         screenShots: [],

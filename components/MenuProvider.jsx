@@ -7,6 +7,7 @@ export function MenuProvider({ children }) {
     const [menuIsOpen, setMenuIsOpen] = useState(false);
     const [isRoute, setIsRoute] = useState(false);
     const router = useRouter();
+    const { events } = router;
 
     useEffect(() => {
         const handleRouteChange = () => {
@@ -18,16 +19,16 @@ export function MenuProvider({ children }) {
             setIsRoute(false);
         };
 
-        router.events.on("routeChangeStart", handleRouteChange);
-        router.events.on("routeChangeComplete", handleRouteComplete);
-        router.events.on("routeChangeError", handleRouteComplete);
+        events.on("routeChangeStart", handleRouteChange);
+        events.on("routeChangeComplete", handleRouteComplete);
+        events.on("routeChangeError", handleRouteComplete);
 
         return () => {
-            router.events.off("routeChangeStart", handleRouteChange);
-            router.events.off("routeChangeComplete", handleRouteComplete);
-            router.events.off("routeChangeError", handleRouteComplete);
+            events.off("routeChangeStart", handleRouteChange);
+            events.off("routeChangeComplete", handleRouteComplete);
+            events.off("routeChangeError", handleRouteComplete);
         };
-    }, []);
+    }, [events]);
 
     return (
         <MenuContext.Provider value={{ isRoute, menuIsOpen, setMenuIsOpen }}>

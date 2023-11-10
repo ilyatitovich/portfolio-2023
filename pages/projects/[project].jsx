@@ -23,7 +23,7 @@ export default function Project() {
         if (router.isReady) {
             setCurrentProject(projectsList[project]);
         }
-    }, [project]);
+    }, [project, router.isReady]);
 
     const {
         title,

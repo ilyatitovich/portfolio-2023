@@ -116,7 +116,15 @@ export default function Projects() {
             <div className="page-content">
                 <div className="projects">
                     <div className="left">
-                        <div className="left-inside">{projectImages}</div>
+                        <motion.div
+                            variants={pageItem}
+                            custom={0}
+                            initial="hide"
+                            animate={menuIsOpen ? "hide" : "show"}
+                            exit="hide"
+                        >
+                            <div className="left-inside">{projectImages}</div>
+                        </motion.div>
                     </div>
                     <div className="right">
                         <motion.div
@@ -128,7 +136,9 @@ export default function Projects() {
                         >
                             <div className="page-head">
                                 <h2 className="page-title">Projects</h2>
-                                <h5 className="elements-number">{numOfProjects}</h5>
+                                <h5 className="elements-number">
+                                    {numOfProjects}
+                                </h5>
                             </div>
                             <hr className="head-separator" />
                         </motion.div>

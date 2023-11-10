@@ -26,7 +26,7 @@ export default function About() {
                             className="profile-pic-wrapper"
                         >
                             <Image
-                                src="/images/profile-img.webp"
+                                src="/images/about-img.webp"
                                 alt="Ilya Titov"
                                 fill={true}
                                 className="profile-pic"
@@ -55,12 +55,8 @@ export default function About() {
                             animate={menuIsOpen ? "hide" : "show"}
                             exit="hide"
                         >
-                            Hey, I&apos;m Ilya, a passionate web developer
-                            specializing in the MERN (MongoDB, Express.js,
-                            React.js, Node.js) stack. With a deep-rooted love
-                            for coding and a creative mind, I bring a unique
-                            blend of technical expertise and a keen eye for
-                            design to the world of web development.
+                            Hey, I&apos;m Ilya, a passionate and creative web developer
+                            based in Belgrade. With a love for crafting digital experiences and a keen eye for detail, I specialize in bringing ideas to life through clean and efficient code.
                         </motion.p>
 
                         <motion.div

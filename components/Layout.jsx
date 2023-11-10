@@ -1,7 +1,7 @@
 import ProgressBar from "./ProgressBar";
 import NavBar from "./NavBar/NavBar";
 import { MenuProvider } from "./MenuProvider";
-import { PageWrapper } from "./animation";
+import PageWrapper from "./PageWrapper";
 import { useEffect } from "react";
 
 export default function Layout({ children }) {

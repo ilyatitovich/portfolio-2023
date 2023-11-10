@@ -2,8 +2,8 @@ import styles from "./NavBar.module.css";
 import Link from "next/link";
 import BurgerBtn from "../BurgerBtn/BurgerBtn";
 import Menu from "../Menu/Menu";
-import { AnimatePresence } from "framer-motion";
 import ThemeToggle from "../ThemeToggleBtn/ThemeToggleBtn";
+import { AnimatePresence } from "framer-motion";
 import { useContext } from "react";
 import { MenuContext } from "../MenuProvider";
 
@@ -12,14 +12,14 @@ export default function NavBar() {
 
   return (
     <>
-      <header>
-        <div className={styles.headerContent}>
-          <div className={styles.leftPart}>
+
+        <nav className={styles.content}>
+          <div className={styles.left}>
             <div className={styles.logo}>
               <Link href="/">Ilya Titov</Link>
             </div>
           </div>
-          <div className={styles.rightPart}>
+          <div className={styles.right}>
             <ul>
               <li>
                 <ThemeToggle />
@@ -32,8 +32,8 @@ export default function NavBar() {
               </li>
             </ul>
           </div>
-        </div>
-      </header>
+        </nav>
+
       <AnimatePresence>
         {menuIsOpen && <Menu onClick={() => setMenuIsOpen(!menuIsOpen)} />}
       </AnimatePresence>
