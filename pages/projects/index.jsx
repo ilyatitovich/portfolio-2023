@@ -80,7 +80,7 @@ export default function Projects() {
                     animate={{ opacity: currentProject === title ? 1 : 0 }}
                     transition={{
                         type: "tween",
-                        duration: currentProject === title ? 0.2 : 0.5,
+                        duration: currentProject === title ? 0.2 : 0.3,
                         ease: "easeOut",
                     }}
                     className="image-wrapper"
