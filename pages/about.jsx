@@ -55,8 +55,11 @@ export default function About() {
                             animate={menuIsOpen ? "hide" : "show"}
                             exit="hide"
                         >
-                            Hey, I&apos;m Ilya, a passionate and creative web developer
-                            based in Belgrade. With a love for crafting digital experiences and a keen eye for detail, I specialize in bringing ideas to life through clean and efficient code.
+                            Hey, I&apos;m Ilya, a passionate and creative web
+                            developer. With a love for crafting digital
+                            experiences and a keen eye for detail, I specialize
+                            in bringing ideas to life through clean and
+                            efficient code.
                         </motion.p>
 
                         <motion.div
