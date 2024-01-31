@@ -1,13 +1,12 @@
-import "@/styles/globals.css";
+import "@/styles/globals.scss";
 import "@/styles/home.css";
 import "@/styles/about.css";
-import "@/styles/projects.css";
-import "@/styles/project.css";
 import "@/styles/contact.css";
+// import "@/styles/blog.css";
+// import "@/styles/post.css";
 
 import { AnimatePresence } from "framer-motion";
 import Layout from "@/components/Layout";
-
 
 export default function App({ Component, pageProps, router }) {
     return (

@@ -1,6 +1,5 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 todo.txt
-blog
 some.html
 
 
@@ -37,3 +36,15 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+
+#blog files
+blog
+blog.css
+post.css
+posts
+/lib/posts.js
+PostItem
+date.jsx
+
+mobile_imgs

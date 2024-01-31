@@ -216,3 +216,22 @@ body.dark .project .project-title {
 body.dark .project-content-wrapper {
     box-shadow: none;
 }
+
+
+.project .desktop-images {
+    display: none;
+}
+
+.project .mobile-images {
+    display: block;
+}
+
+@media screen and (min-width: 30em) {
+    .project .desktop-images {
+        display: block;
+    }
+    
+    .project .mobile-images {
+        display: none;
+    }
+}

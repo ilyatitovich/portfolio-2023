@@ -1,0 +1,4 @@
+@mixin height($vhPoints: 100) {
+    height: calc(1vh * $vhPoints);
+    height: calc(var(--innerVh, 1vh) * $vhPoints);
+}

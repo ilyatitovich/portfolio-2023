@@ -1,61 +1,65 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import Custom404 from "../404";
-import { useRouter } from "next/router";
-import { useState, useEffect, useContext } from "react";
-import { projectsList } from "@/data/data";
+import { useState, useContext } from "react";
+import { getProject, getProjectsPaths } from "@/lib/projects";
 import { motion } from "framer-motion";
 import { pageItem } from "@/components/animation";
 import { MenuContext } from "@/components/MenuProvider";
 import { ReactLenis } from "@studio-freight/react-lenis";
 
-export default function Project() {
+export async function getStaticProps({ params }) {
+    const project = getProject(params.id);
+
+    return {
+        props: {
+            project,
+        },
+    };
+}
+
+export async function getStaticPaths() {
+    const paths = getProjectsPaths();
+
+    return {
+        paths,
+        fallback: false,
+    };
+}
+
+export default function Project({ project }) {
     const { menuIsOpen } = useContext(MenuContext);
-
-    const router = useRouter();
-    const { project } = router.query;
-
-    const [currentProject, setCurrentProject] = useState("");
     const [hovered, setHovered] = useState(false);
-
-    useEffect(() => {
-        if (router.isReady) {
-            setCurrentProject(projectsList[project]);
-        }
-    }, [project, router.isReady]);
 
     const {
         title,
         cover,
-        category,
         description,
         techStack,
         website,
-        screenShots,
+        desktopImages,
         nextProject,
-    } = currentProject || {};
+    } = project || {};
 
-    const screenShotItems =
-        currentProject &&
-        screenShots.map((screenShot) => {
-            return (
-                <div key={screenShot} className="project-content-wrapper">
-                    <Image
-                        src={screenShot}
-                        alt={screenShot.split("/").at(-1)}
-                        width={2000}
-                        height={1070}
-                        className="project-content-image"
-                    />
-                </div>
-            );
-        });
+    const desktopImagesItems = desktopImages.map((img) => {
+        return (
+            <div key={img} className="project-content-wrapper">
+                <Image
+                    src={img}
+                    alt={img.split("/").at(-1)}
+                    width={2000}
+                    height={1070}
+                    className="project-content-image"
+                />
+            </div>
+        );
+    });
 
-    return currentProject ? (
+
+    return (
         <>
             <Head>
-                <title>Ilya Titov | {title}</title>
+                <title>{`Project: ${title} | Ilya Titov`}</title>
             </Head>
             <ReactLenis root>
                 <div className="page-content">
@@ -110,7 +114,7 @@ export default function Project() {
                                             </td>
                                             <td>
                                                 <ul>
-                                                    <li>{category}</li>
+                                                    <li>Web Development</li>
                                                 </ul>
                                             </td>
                                         </tr>
@@ -127,7 +131,7 @@ export default function Project() {
                             </div>
                             <div className="project-description">
                                 <p>{description}</p>
-                                {project !== "portfolio" && (
+                                {website && (
                                     <div className="project-website">
                                         <div className="link-wrapper">
                                             <div className="link">
@@ -155,7 +159,9 @@ export default function Project() {
                             className="project-content"
                         >
                             <h6>Screenshots</h6>
-                            {screenShotItems}
+
+                                {desktopImagesItems}
+
                         </motion.section>
 
                         <motion.div
@@ -169,7 +175,7 @@ export default function Project() {
                             onMouseLeave={() => setHovered(false)}
                         >
                             <hr />
-                            <Link href={nextProject.path}>
+                            <Link href={nextProject}>
                                 <div className="next-project-wrapper">
                                     <div className="next-project-left">
                                         <div className="next-project-selected-wrapper">
@@ -200,8 +206,10 @@ export default function Project() {
                                         </motion.h4>
                                     </div>
                                     <div className="next-project-right">
-                                        <h4>{nextProject.title}</h4>
-                                        <p>{nextProject.category}</p>
+                                        <h4>
+                                            {nextProject.split("-").join(" ")}
+                                        </h4>
+                                        <p>Web Development</p>
                                     </div>
                                 </div>
                             </Link>
@@ -210,7 +218,5 @@ export default function Project() {
                 </div>
             </ReactLenis>
         </>
-    ) : (
-        project && <Custom404 />
     );
 }
