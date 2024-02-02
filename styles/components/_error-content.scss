@@ -1,0 +1,44 @@
+.error-content {
+    @include height;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h3 {
+        font-size: 2rem;
+    }
+
+    .error-code {
+        font-family: studiofeixen;
+        font-weight: 800;
+        -webkit-text-stroke: 1.25px var(--color);
+        color: transparent;
+        font-size: 6rem;
+    }
+
+    a {
+        margin-top: var(--top-internal-margin);
+    }
+}
+
+@media (min-width: 30em) and (min-height: 30em) {
+    .error-content {
+        .error-code {
+            font-size: 8rem;
+        }
+    }
+}
+
+@media (min-width: 50em) and (min-height: 30em) {
+    .error-content {
+        h3 {
+            font-size: 3.5rem;
+        }
+
+        .error-code {
+            font-size: 12rem;
+            -webkit-text-stroke: 2px var(--color);
+        }
+    }
+}

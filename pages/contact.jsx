@@ -1,148 +1,93 @@
 import Head from "next/head";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { pageItem } from "@/components/animation";
-import { MenuContext } from "../components/MenuProvider";
-import { useContext } from "react";
+import AnimateItem from "@/components/AnimateItem";
+import PageHead from "@/components/PageHead";
 
 export default function Contact() {
-    const { menuIsOpen } = useContext(MenuContext);
-
     return (
         <>
             <Head>
-                <title>Ilya Titov | Contact</title>
+                <title>Contact | Ilya Titov</title>
             </Head>
             <div className="page-content">
                 <div className="contact">
-                    <motion.div
-                        variants={pageItem}
-                        custom={0}
-                        initial="hide"
-                        animate={menuIsOpen ? "hide" : "show"}
-                        exit="hide"
-                    >
-                        <div className="page-head">
-                            <h2 className="page-title">Contact</h2>
-                        </div>
-                        <hr className="head-separator" />
-                    </motion.div>
+                    <AnimateItem>
+                        <PageHead title="Contact" />
+                    </AnimateItem>
 
-                    <div className="content">
-                        <div className="left">
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <motion.td
-                                            variants={pageItem}
-                                            custom={1}
-                                            initial="hide"
-                                            animate={
-                                                menuIsOpen ? "hide" : "show"
-                                            }
-                                            exit="hide"
-                                        >
-                                            <h6>Mail</h6>
-                                        </motion.td>
+                    <AnimateItem>
+                        <div className="content">
+                            <div className="left">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <h6>Mail</h6>
+                                            </td>
 
-                                        <motion.td
-                                            variants={pageItem}
-                                            custom={1}
-                                            initial="hide"
-                                            animate={
-                                                menuIsOpen ? "hide" : "show"
-                                            }
-                                            exit="hide"
-                                        >
-                                            <div className="link-wrapper">
-                                                <div className="link">
-                                                    <Link
-                                                        href="mailto:ilyatitovich@gmail.com"
-                                                        target="_blank"
-                                                        rel="noreferrer"
-                                                        className="link-underline"
-                                                    >
-                                                        ↗ Say hello!
-                                                    </Link>
+                                            <td>
+                                                <div className="link-wrapper">
+                                                    <div className="link">
+                                                        <Link
+                                                            href="mailto:ilyatitovich@gmail.com"
+                                                            target="_blank"
+                                                            rel="noreferrer"
+                                                            className="link-underline"
+                                                        >
+                                                            ↗ Say hello!
+                                                        </Link>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </motion.td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div className="right">
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <motion.td
-                                            variants={pageItem}
-                                            custom={1}
-                                            initial="hide"
-                                            animate={
-                                                menuIsOpen ? "hide" : "show"
-                                            }
-                                            exit="hide"
-                                        >
-                                            <h6>Social medias</h6>
-                                        </motion.td>
-                                        <td>
-                                            <ul>
-                                                <motion.li
-                                                    variants={pageItem}
-                                                    custom={1}
-                                                    initial="hide"
-                                                    animate={
-                                                        menuIsOpen
-                                                            ? "hide"
-                                                            : "show"
-                                                    }
-                                                    exit="hide"
-                                                >
-                                                    <div className="link-wrapper">
-                                                        <div className="link">
-                                                            <Link
-                                                                href="https://github.com/ilyatitovich"
-                                                                target="_blank"
-                                                                rel="noreferrer"
-                                                                className="link-underline"
-                                                            >
-                                                                ↗ GitHub
-                                                            </Link>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div className="right">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <h6>Social medias</h6>
+                                            </td>
+                                            <td>
+                                                <ul>
+                                                    <li>
+                                                        <div className="link-wrapper">
+                                                            <div className="link">
+                                                                <Link
+                                                                    href="https://github.com/ilyatitovich"
+                                                                    target="_blank"
+                                                                    rel="noreferrer"
+                                                                    className="link-underline"
+                                                                >
+                                                                    ↗ GitHub
+                                                                </Link>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </motion.li>
-                                                <motion.li
-                                                    variants={pageItem}
-                                                    custom={1}
-                                                    initial="hide"
-                                                    animate={
-                                                        menuIsOpen
-                                                            ? "hide"
-                                                            : "show"
-                                                    }
-                                                    exit="hide"
-                                                >
-                                                    <div className="link-wrapper">
-                                                        <div className="link">
-                                                            <Link
-                                                                href="https://www.linkedin.com/in/ilyatitovich"
-                                                                target="_blank"
-                                                                rel="noreferrer"
-                                                                className="link-underline"
-                                                            >
-                                                                ↗ LinkedIn
-                                                            </Link>
+                                                    </li>
+                                                    <li>
+                                                        <div className="link-wrapper">
+                                                            <div className="link">
+                                                                <Link
+                                                                    href="https://www.linkedin.com/in/ilyatitovich"
+                                                                    target="_blank"
+                                                                    rel="noreferrer"
+                                                                    className="link-underline"
+                                                                >
+                                                                    ↗ LinkedIn
+                                                                </Link>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </motion.li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
-                    </div>
+                    </AnimateItem>
                 </div>
             </div>
         </>

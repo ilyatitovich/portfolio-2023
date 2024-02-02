@@ -1,7 +1,4 @@
 import "@/styles/globals.scss";
-import "@/styles/home.css";
-import "@/styles/about.css";
-import "@/styles/contact.css";
 // import "@/styles/blog.css";
 // import "@/styles/post.css";
 

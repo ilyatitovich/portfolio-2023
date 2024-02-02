@@ -1,0 +1,66 @@
+.home {
+    @include height;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1.25em;
+    }
+
+    .main-title {
+        font-size: clamp(1rem, 0.75rem + 2.5vw, 3rem);
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .sub-title {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-size: clamp(1rem, 0.25rem + 2.5vw, 1.75rem);
+        font-weight: normal;
+    }
+
+    .links-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5em;
+    }
+}
+
+@media (min-width: 34em) {
+    .home {
+        .main-title {
+            font-size: clamp(1rem, 0.75rem + 4vw, 4rem);
+        }
+
+        .sub-title {
+            display: block;
+            font-size: clamp(1rem, 0.25rem + 4vw, 1.2rem);
+        }
+
+        .links-wrapper {
+            flex-direction: row;
+            gap: 3em;
+        }
+    }
+}
+
+@media (min-width: 58em) {
+    .home {
+        .main-title {
+            font-size: clamp(1rem, 2rem + 4vw, 4rem);
+        }
+
+        .sub-title {
+            font-size: clamp(1rem, 0.25rem + 4vw, 2rem);
+        }
+    }
+}

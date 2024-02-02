@@ -1,0 +1,190 @@
+.project {
+    position: relative;
+    overflow-y: hidden;
+
+    .header {
+        display: flex;
+        flex-direction: column;
+        padding: var(--top-margin) var(--left-right-margin) 0;
+
+        .hero-image-wrapper {
+            position: relative;
+            padding-top: 75%;
+
+            .hero-image {
+                border-radius: var(--border-radius);
+                object-fit: cover;
+            }
+        }
+    }
+
+    .title {
+        margin: calc(var(--top-internal-margin) * 2) var(--left-right-margin) 0;
+    }
+
+    .intro {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: var(--top-internal-margin) var(--left-right-margin)
+            var(--top-internal-margin);
+
+        .data {
+            width: 100%;
+            padding-right: 0;
+
+            h6 {
+                padding-right: var(--left-right-internal-margin);
+                text-overflow: ellipsis;
+                overflow-x: clip;
+            }
+        }
+
+        .description {
+            width: 100%;
+            padding-left: 0;
+
+            .project-website {
+                margin-top: var(--top-internal-margin);
+                width: fit-content;
+            }
+        }
+    }
+
+    .project-content {
+        font-size: 1rem;
+        padding: 0 var(--left-right-margin) 0;
+
+        h6 {
+            font-variation-settings: "wght" 800, "wdth" 100;
+            margin: calc(var(--top-internal-margin) * 2) 0
+                calc(var(--top-internal-margin) / 2);
+            text-align: center;
+        }
+
+        .project-content-wrapper {
+            margin-bottom: var(--top-internal-margin);
+            display: flex;
+            box-shadow: 0 0 20px var(--shadow);
+
+            .project-content-image {
+                border-radius: var(--border-radius-content);
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    .next-project {
+        padding: 0 var(--left-right-margin) 0;
+        width: 100%;
+
+        hr {
+            margin-top: var(--top-internal-margin);
+        }
+
+        .wrapper {
+            padding: var(--top-internal-margin) 0 var(--top-internal-margin);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .left {
+                width: 50%;
+                padding-right: var(--left-right-internal-margin);
+
+                .selected-wrapper {
+                    position: absolute;
+                    overflow: hidden;
+                }
+
+                .selected {
+                    padding-right: 12px;
+                    position: relative;
+                    transform: translateX(-48px);
+                }
+            }
+
+            .next-project-right {
+                width: 50%;
+                padding-left: var(--left-right-internal-margin);
+                text-align: right;
+            }
+
+            .selected,
+            .next-project-title {
+                transition: all 0.3s ease-in-out;
+            }
+
+            &:hover {
+                .selected {
+                    transform: translateX(0);
+                }
+
+                .next-project-title {
+                    transform: translateX(24px);
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 30em) {
+    .project {
+        .intro {
+            flex-direction: column;
+
+            .data {
+                width: 100%;
+                padding-right: 0;
+            }
+
+            .description {
+                width: 100%;
+                padding-left: 0;
+            }
+        }
+    }
+}
+
+@media (min-width: 52em) {
+    .project {
+        .header {
+            padding: 0;
+
+            .hero-image-wrapper {
+                @include height(75);
+                padding-top: 0;
+
+                .hero-image {
+                    border-radius: 0 0 var(--border-radius) var(--border-radius);
+                }
+            }
+        }
+
+        .data {
+            width: 50%;
+            padding-right: var(--left-right-internal-margin);
+        }
+
+        .intro {
+            flex-direction: row;
+        }
+
+        .project-content {
+            font-size: 1.2rem;
+        }
+
+        .description {
+            width: 50%;
+            padding-left: var(--left-right-internal-margin);
+        }
+    }
+}
+
+@media (min-width: 75em) {
+    .project .header {
+        padding: 0 var(--left-right-margin) 0;
+    }
+}

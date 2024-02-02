@@ -1,0 +1,35 @@
+.page-head {
+    display: flex;
+    align-items: baseline;
+}
+
+.page-head .page-title {
+    width: 100%;
+    text-align: left;
+    margin: 0;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+}
+
+@media (min-width: 36em) and (max-width: 61.99em) {
+    .page-head .page-title {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 35.99em) {
+    .page-head .page-title {
+        font-size: 2rem;
+    }
+}
+
+.page-head .elements-number {
+    font-family: studiofeixen-writer, studiofeixen, Arial, Helvetica, sans-serif;
+    letter-spacing: -0.1em;
+}
+
+.head-separator {
+    width: 100%;
+    margin-top: 12px;
+    margin-bottom: 0;
+}

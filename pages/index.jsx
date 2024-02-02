@@ -1,54 +1,25 @@
 import Head from "next/head";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { MenuContext } from "../components/MenuProvider";
-import { useContext } from "react";
-import { pageItem } from "@/components/animation";
-
+import AnimateItem from "@/components/AnimateItem";
 
 export default function Home() {
-    const { menuIsOpen } = useContext(MenuContext);
-
     return (
         <div className="home">
             <Head>
                 <title>Ilya Titov | Web Developer</title>
             </Head>
             <div className="content">
-                <div className="wrapper">
-                    <motion.h1
-                        variants={pageItem}
-                        custom={3}
-                        initial="hide"
-                        animate={menuIsOpen ? "hide" : "show"}
-                        exit="hide"
-                        className="main-title"
-                    >
-                        Hey, my name is Ilya
-                    </motion.h1>
-                </div>
-                <div className="wrapper">
-                    <motion.h3
-                        variants={pageItem}
-                        custom={2}
-                        initial="hide"
-                        animate={menuIsOpen ? "hide" : "show"}
-                        exit="hide"
-                        className="sub-title"
-                    >
+                <AnimateItem custom={3}>
+                    <h1 className="main-title">Hey, my name is Ilya</h1>
+                </AnimateItem>
+                <AnimateItem custom={2}>
+                    <h3 className="sub-title">
                         <span>I&apos;m web developer</span>
-                        <span> with passion for design and music</span>
-                    </motion.h3>
-                </div>
-                <div className="wrapper">
-                    <motion.div
-                        variants={pageItem}
-                        custom={1}
-                        initial="hide"
-                        animate={menuIsOpen ? "hide" : "show"}
-                        exit="hide"
-                        className="links-wrapper"
-                    >
+                        <span> and music lover</span>
+                    </h3>
+                </AnimateItem>
+                <AnimateItem custom={1}>
+                    <div className="links-wrapper">
                         <div className="link">
                             <Link href="/projects" className="link-underline">
                                 → projects
@@ -59,8 +30,8 @@ export default function Home() {
                                 → about me
                             </Link>
                         </div>
-                    </motion.div>
-                </div>
+                    </div>
+                </AnimateItem>
             </div>
         </div>
     );
