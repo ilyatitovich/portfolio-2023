@@ -29,7 +29,7 @@ export default function Contact() {
                                                 <div className="link-wrapper">
                                                     <div className="link">
                                                         <Link
-                                                            href="mailto:ilyatitovich@gmail.com"
+                                                            href="mailto:ilyatitovdev@gmail.com"
                                                             target="_blank"
                                                             rel="noreferrer"
                                                             className="link-underline"
